@@ -1,0 +1,43 @@
+###
+GET http://localhost:3000
+
+###
+GET http://localhost:3000/alunos
+
+###
+POST http://localhost:3000/alunos/cadastro
+content-type: application/json
+
+{
+    "nome":"Zezinho",
+    "email":"zecovas@teste.com",
+    "turma":"A",
+    "matricula":"bd3433",
+    "serie":3,
+    "sexo":"M",
+    "telefone":"(84) 97777000",
+    "endereco":"Rua dos Achados",
+    "responsavel":"Popeye"
+}
+###
+GET http://localhost:3000/alunos/buscarAlunos/bd3433
+###
+PUT  http://localhost:3000/alunos/editarAlunos/bd3433
+content-type: application/json
+
+{
+    "nome":"Carlos",
+    "email":"carlinhos@teste.com",
+    "turma":"B",
+    "serie":1,
+    "sexo":"M",
+    "telefone":"(84) 90903232",
+    "endereco":"Rua do Baratão",
+    "responsavel":"Supervisor"
+}
+###
+DELETE http://localhost:3000/alunos/deletarAlunos/bd3433
+content-type: application/json
+
+###
+GET http://localhost:3000/alunos/Cadastrar

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Alunos</title>
+    <link rel="stylesheet" href="/editar.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Formulário de Cadastro de Aluno</h1>
+      </header>
+      <section>
+        <% matricula.forEach(dado=>{ %>
+        <form method="post" action="/alunos/editarAlunos/<%= dado.MATRICULA %>?_method=PUT">
+          <label for="matricula">Matricula:</label>
+          <input type="text" id="matricula" name="MATRICULA" value="<%= dado.MATRICULA %>" disable/>
+          <br />
+
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="NOME" value="<%= dado.NOME %>"/>
+          <br />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="EMAIL" value="<%= dado.EMAIL %>"/>
+          <br />
+
+          <label for="turma">Turma:</label>
+          <input type="text" id="turma" name="TURMA" value="<%= dado.TURMA %>"/>
+          <br />
+
+          <label for="serie">Série:</label>
+          <input type="number" id="serie" name="SERIE" value="<%= dado.SERIE %>"/>
+          <br />
+
+          <label for="sexo">Sexo:</label>
+          <input type="text" name="SEXO" id="sexo" value="<%= dado.SEXO %>">
+          <br />
+
+          <label for="telefone">Telefone:</label>
+          <input type="text" id="telefone" name="TELEFONE" value="<%= dado.TELEFONE %>"/>
+          <br />
+
+          <label for="endereco">Endereço:</label>
+          <input type="text" id="endereco" name="ENDERECO" value="<%= dado.ENDERECO %>"/>
+          <br />
+
+          <label for="responsavel">Responsável:</label>
+          <input type="text" id="responsavel" name="RESPONSAVEL" value="<%= dado.RESPONSAVEL %>"/>
+          <br />
+
+          <input type="submit" value="Enviar" />
+        </form>
+        <%}) %>
+      </section>
+    </main>
+  </body>
+</html>
